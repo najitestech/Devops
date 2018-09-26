@@ -1,0 +1,15 @@
+---
+- name: adding users to server
+  user:
+   name: "{{ item }}"
+   append: yes
+   password: "{{ user_pass }}"
+  with_items:
+    - ola
+    - ade
+  tags: addusers 
+   
+- name: Expire passwd for najite
+  shell: chage -d 0 [ "ola" ]
+  tags: expire-passwd
+

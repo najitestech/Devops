@@ -1,0 +1,17 @@
+---
+- name: installing java in Centos-server
+  yum:
+    name: java-1.8.0-openjdk
+    state: present
+  when:
+    ansible_distribution == 'CentOS'
+
+# This part will install java on Ubuntu server
+
+- name: installing java in Ubuntu-server
+  apt:
+    name: openjdk-8-jdk
+    state: present
+  when:
+    ansible_distribution == 'Ubuntu'
+

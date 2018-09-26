@@ -1,0 +1,53 @@
+---
+#- name: testing this script
+#  hosts: devops-servers 
+#  gather_facts: true
+#  become: sudo 
+#  tasks:
+- name: installing items on CentOS server
+  yum: name={{ item }} state=present
+  with_items:
+    - wget
+    - vim
+    - figlet
+    - monitorix
+    - python-pip
+    - openvpn
+    - MySQL-python
+    - openssh-server
+    - epel-release
+  when: ansible_distribution == "CentOS"
+ 
+- name: installing items on Ubuntu server
+  apt: name={{ item }} state=present
+  with_items:
+    - wget
+    - vim
+    - figlet
+    - monitorix
+    - python-pip
+    - openvpn
+    - openssh-server
+
+  when: ansible_distribution == "Ubuntu"
+
+- name: adding users to servers
+  user: 
+    name: "{{ item }}"
+    append: yes
+    password: 12345
+  with_items:
+    - omali
+    - jazz
+
+- name: expire password for users
+  command: chage -d 0 omali 
+  tags: expire
+ 
+- name: deleting users from servers
+  user: name={{ item }} state=absent remove=yes
+  with_items:
+    - omali
+    - jazz
+  tags: expire
+ 

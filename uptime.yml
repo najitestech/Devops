@@ -1,0 +1,9 @@
+---
+- hosts: dummy
+  user: najite
+  tasks:
+  - name: get uptime
+    shell: uptime 
+    changed_when: False
+    register: uptime
+

@@ -1,0 +1,16 @@
+---
+- name: ping all servers
+  hosts: all
+  gather_facts: true
+  become_method: yes
+  tasks:
+  - name: pinging all servers
+    ping:
+    notify:
+    - resatrt service
+ 
+  handlers:
+    - name: restart service
+      service:
+        name: monitorix
+        state: restarted

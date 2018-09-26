@@ -1,0 +1,8 @@
+---
+- hosts: devops-servers
+  tasks:
+#  - import_role:
+#      name: myroles/add_user
+
+  - import_role:
+      name: myroles/java
