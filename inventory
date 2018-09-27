@@ -10,7 +10,7 @@
 192.168.0.36 ansible_user=root
 
 [dummy]
-192.168.0.36 ansible_user=root
+192.168.0.36 ansible_user=najite
 
 [jnks-slave]
 192.168.0.28 ansible_user=root

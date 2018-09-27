@@ -589,3 +589,252 @@ ansible-playbook site.yml
 vim inventory 
 ansible-playbook site.yml --check
 ansible-playbook site.yml
+ls
+cd
+ls
+vim test.yml 
+vim uptime.yml 
+vim site.yml 
+vim myroles/java/tasks/main.yml 
+cd myroles/
+ls
+vim TEST/tasks/main.yml 
+vim TEST/tasks/test.yml 
+su -
+ls
+pwd
+sudo ls
+cd
+ls
+rm mkdir.retry 
+ls
+cat ips.txt 
+vim ping-job.yml
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml --check
+ssh-copy-id root@192.168.0.245
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml --check
+ansible -m ping 192.168.0.245
+ssh-copy-id root@192.168.0.245
+ansible -m ping 192.168.0.245
+vim inventory 
+ansible -m ping 192.168.0.245
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml --check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml --check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml --check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+git add ping-job.yml 
+git git@gitlab.com:najitesit/developments.git
+git remote -v
+git push
+add git
+sudo yum install git
+cat /root/.ssh/id_rsa.pub
+sudo cat /root/.ssh/id_rsa.pub
+cat .ssh/
+sudo cat .ssh/id_rsa.pub
+git init
+git status
+git add -A
+git branch
+git commit -m "normal user first commit"
+git push origin master
+git config  user.name "Your Name"
+git push origin master
+git push
+git remote add origin git@gitlab.com:najitesit/developments.git
+git remote -v
+git branch
+git checkout -b devops
+git branch
+git push -u origin devops
+git push
+git push -u origin master
+git branch
+git checkout devops
+git checkout -b devops
+git checkout master
+git remote -v
+git add -A
+git status
+git push
+git config --global push.default matching
+git push
+git remote -v
+ls
+git add inventory 
+git add -A
+git commit -m "my first commit to this branch"
+git config --global user.name "Your Name"
+git commit -m "my first commit to this branch"
+git config
+git config najite
+git config najite@ansible
+git remote -v
+git push -u origin master
+git branch
+git remote add origin git@gitlab.com:najitesit/developments.git
+git status
+ls
+git add copyssh.sh 
+git commit -m "ifrst commit"
+git config --global user.name najite
+git commit -m "ifrst commit"
+git config --global user.email najitesit@gmail.com
+git config --global user.name najite
+git commit -m "ifrst commit"
+git push -u origin master
+git push
+git pull
+git push
+git merge master
+git branch
+git push -u origin devops
+git checkout master
+git branch
+git status
+git branch
+git checkout devops
+git checkout master
+sun-
+su -
+git branch
+su -
+git branch
+ls
+vim ping-job.yml 
+ansible-playbook ping-job.yml --check
+ansible -m shell -a "date | figlet" dummy
+vim ping-job.yml 
+ansible-playbook ping-job.yml --sntax-check
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml --check
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+vim inventory 
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml --check
+ssh-copy-id najite@dummy
+ssh-copy-id najite@192.168.0.36
+ansible-playbook ping-job.yml --check
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml --syntax-check
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+ansible-playbook ping-job.yml
+vim ping-job.yml 
+su -
+sudo cd /var/lib/awx/projects/
+pwd
+su -

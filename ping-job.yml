@@ -1,16 +1,19 @@
 ---
 - name: ping all servers
-  hosts: all
-  gather_facts: true
-  become_method: yes
+  hosts: dummy
+  gather_facts: false
+  become_method: yes 
   tasks:
   - name: pinging all servers
     ping:
-    notify:
-    - resatrt service
  
-  handlers:
-    - name: restart service
-      service:
-        name: monitorix
-        state: restarted
+  - name: print date using figlet 
+    shell: date | figlet > /home/najite/figlet.txt
+
+  - name: cat output of figlet
+    shell: cat /home/najite/figlet.txt
+    register: data 
+
+  - name: print out the figlet result
+    debug:
+      msg: "{{ data.stdout }}"
