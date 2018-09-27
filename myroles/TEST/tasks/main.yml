@@ -3,3 +3,4 @@
 
 - include: test2.yml
 
+- include: test3.yml
