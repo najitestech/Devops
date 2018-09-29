@@ -1,0 +1,12 @@
+---
+- name: Sending email to client
+  mail: 
+    host: smtp.gmail.com
+    port: 587
+    username: "{{ username }}"
+    password: "{{ mysecret }}"
+    to: "{{ client }}"
+    subject: "Ansible mailing"
+    body: 'Hello, this is Ansible sending this mail.
+           Najite: Ansible Expert/Devops engineer'
+                 
