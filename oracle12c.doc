@@ -143,4 +143,16 @@ Post Installation
 
 dit the "/etc/oratab" file setting the restart flag for each instance to 'Y' 
 
-cdb1:/u01/app/oracle/product/12.1.0/db_1:Y
+
+export ORACLE_SID=najite
+export ORACLE_HOME=/U01/home/oracle/app/oracle/product/12.2.0/dbhome_1
+export PATH=$PATH:$ORACLE_HOME/bin
+
+#Oracle environment
+export ORACLE_SID=DevopsRoles
+export ORACLE_HOME=/U01/home/oracle/app/oracle/product/12.2.0/dbhome_1
+export PATH=$PATH:$ORACLE_HOME/bin
+
+source ~/.bash_profile
+
+sqlplus / as sysdba
