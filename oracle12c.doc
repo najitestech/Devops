@@ -144,7 +144,7 @@ Post Installation
 dit the "/etc/oratab" file setting the restart flag for each instance to 'Y' 
 
 
-export ORACLE_SID=najite
+export ORACLE_SID=orcl
 export ORACLE_HOME=/U01/home/oracle/app/oracle/product/12.2.0/dbhome_1
 export PATH=$PATH:$ORACLE_HOME/bin
 
