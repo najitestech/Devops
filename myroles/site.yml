@@ -1,0 +1,8 @@
+---
+- name: About install Terraform to remote server
+  hosts: 192.168.0.25 
+  gather_facts: true
+  become_method: yes
+  tasks:
+  - import_role:
+      name: terraform

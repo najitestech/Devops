@@ -1,0 +1,21 @@
+---
+- name: pull container
+  docker_container:
+    name: alpine 
+  when: true
+#
+#- name: creat huginn image
+#  docker_image:
+#    path: /etc/docker
+#    name: huginn
+
+#- name: create a container
+#  docker_container:
+#    name: huginn
+#    image: huginn
+#    state: started
+#    ports:
+#    - "10000"
+#    tty: true
+#    detach: true
+#    

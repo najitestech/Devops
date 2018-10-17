@@ -1,0 +1,32 @@
+---
+- name: copying binary file to remote sever
+  copy:
+    src: /home/najite/terraform_0.11.8_linux_amd64.zip
+    dest: /root/
+    owner: root
+    group: root
+    mode: 0755
+  tags: copy
+
+- name: installing unzip to server
+  yum: name=unzip state=present
+  when: true
+  tags: install-zip
+
+- name: unzipping terraform zip file
+  unarchive:
+    src: /root/terraform_0.11.8_linux_amd64.zip
+    dest: /root/
+    remote_src: yes
+  tags: unzip
+
+- name: Uninstalling terraform zip file
+  file:
+    path: /root/terraform_0.11.8_linux_amd64.zip
+    state: absent
+    remote_src: yes
+  tags: remove
+
+- debug:
+    msg: "Job weldone, System is working perfectly well!!"
+  tags: msg
