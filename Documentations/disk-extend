@@ -1,0 +1,46 @@
+*****
+#This are the steps to follow when extending a volume group disk.
+
+Step 1.
+Power off your VM and add a new virtual disk from the Vm settings
+
+Steop 2.
+Run ths command just to verify that the new disk is available
+ls -l /dev/sd*
+
+Step 3.
+Now, use the fdisk utility to partition the disk
+fdisk /dev/sdb
+hit (n) for new
+hit (p) for primary partition
+and partition number 1 and continue with default installations by hitting the enter button
+
+Command (m for help): hit (t) and enter (8e) and hit (w) to write table to disk.
+Run this command again fdisk /dev/sdb now you will see that a new partition has be added called (sdb1)
+
+And your are done with the first part.
+
+Step 4. PVCREAT
+Now run this command: 
+pvcreate /dev/sdb1
+successfully created message will be displayed
+run pvdisply  to display the new physical volume disk
+do: vgdisplay    to see the volume group that are present
+
+Step 5. Add the new physical you just created
+vgextend -t -v centos /dev/sdb1     NB: the (-t) is to test command. A successful message will be displayed
+vgextend -v centos /dev/sdb1  This is for real.
+Run vgdisplay again to take a look
+
+write down the : (Free  PE / Size)   this will the total number of space that you can add. PE stands for: PHYSICAL EXTENT
+Do lvdisplay 
+
+Step 6. Extend the logical volume
+Test Run:  lvextend -l +the number of the PE size -r -t -v /dev/centos/root  NB: test mode
+
+For real: lvextend -l +767 -r -v /dev/centos/root
+
+Run: df -h   you now see that the root system disk has been extented.
+
+Congrats!!!!!!
+
