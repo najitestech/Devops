@@ -1,2 +1,18 @@
 ---
-# tasks file for vpn
+- name: Adding ovpn key file to remote server
+  copy:
+    src: /root/vpn_key_files/name.ovpn
+    dest: /root/
+  when: false
+
+- name: Copying vpn.service to remote server
+  copy:
+    src: /root/ovpn.sh
+    dest: /root/
+  when: false
+
+- name: Adding vpn.sh file to remote server
+  copy:
+    src: /root/vpn.sh
+    dest: /usr/local/bin/
+  when: false
