@@ -1,0 +1,40 @@
+[devops-servers]
+192.168.0.18 ansible_user=root
+192.168.0.59 ansible_user=root
+192.168.0.118 ansible_user=root
+192.168.0.239 ansible_user=root
+192.168.0.53 ansible_user=root
+192.168.0.245 ansible_user=root
+192.168.0.248 ansible_user=root
+192.168.0.150 ansible_user=root
+192.168.0.36 ansible_user=root
+
+[dummy]
+192.168.0.36 ansible_user=root
+
+[jnks-slave]
+192.168.0.28 ansible_user=root
+192.168.0.29 ansible_user=root
+
+[ubuntu]
+192.168.0.18 
+192.168.0.59 
+192.168.0.118 
+192.168.0.239 
+192.168.0.53
+
+[centos]
+192.168.0.245
+192.168.0.248
+192.168.0.150
+192.168.0.36
+
+[Test-Envi]
+192.168.0.101
+192.168.0.26 ansible_user=root
+
+[test-server5]
+192.168.0.24 ansible_user=root
+
+[jira]
+192.168.0.101 ansible_user=root

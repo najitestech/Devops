@@ -1,0 +1,40 @@
+---
+- name: updating the system
+  apt: upgrade=yes update_cache=yes 
+  when: ansible_distribution == "Ubuntu"  
+  tags: update
+
+- name: restarting the system to reboot to newest kernel
+  shell: "sleep 5 && reboot"
+  async: 1
+  poll: 0
+  when: ansible_distribution == "Ubuntu"
+  tags: restart
+
+- name: wait for 90 seconds
+  pause: 
+    seconds: 90
+  when: ansible_distribution == "Ubuntu"
+  tags: waiting
+
+- name: installing epel-release
+  apt: 
+    name: epel-release
+    state: present
+  when: ansible_distribution == "Ubuntu"
+  tags: epel
+
+- name: installing Apache2
+  apt:
+    name: apache2
+    state: present 
+  when: ansible_distribution == "Ubuntu"
+  tags: apache
+
+- name: Ensuring apache service is started and enabled
+  service:
+    name: apache
+    state: started
+    enabled: yes
+  when: ansible_distribution == "Ubuntu"
+  tags: start-apache

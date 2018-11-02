@@ -1,0 +1,87 @@
+---
+- name: updating the system
+  yum: name=* state=latest update_cache=yes
+  when: ansible_distribution == "CentOS"  
+  tags: update
+
+- name: restarting the system to reboot to newest kernel
+  shell: "sleep 5 && reboot"
+  async: 1
+  poll: 0
+  when: ansible_distribution == "CentOS"
+  tags: restart
+
+- name: wait for 90 seconds
+  pause: 
+    seconds: 90
+  when: ansible_distribution == "CentOS"
+  tags: waiting
+
+- name: installing epel-release
+  yum: 
+    name: epel-release
+    state: present
+  when: ansible_distribution == "CentOS"
+  tags: epel
+
+- name: installing HTTPD
+  yum:
+    name: httpd
+    state: present 
+  when: ansible_distribution == "CentOS"
+  tags: httpd
+
+- name: Ensuring httpd service is started and enabled
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+  when: ansible_distribution == "CentOS"
+  tags: start-httpd
+
+- debug:
+    msg: ALL REDHAT AND CENTOS MACHINE PATCH AND UPDATED SUCCESSFULLY!!!
+  when: ansible_distribution == "CentOS"
+  tags: msg
+
+#*****************************************************************************
+#                                                                            #
+#                 THIS NEXT PART WILL RUN ON UBUNTU SERVER                   #
+#                                                                            #
+#*****************************************************************************
+ 
+- name: updating the Ubuntu system
+  apt: upgrade=yes update_cache=yes
+  when: ansible_distribution == "Ubuntu"
+  tags: updates
+
+- name: restarting the system to reboot to newest kernel
+  shell: "sleep 5 && reboot"
+  async: 1
+  poll: 0
+  when: ansible_distribution == "Ubuntu"
+  tags: restart
+
+- name: wait for 90 seconds
+  wait_for: timeout=90
+  delegate_to: localhost
+  when: ansible_distribution == "Ubuntu"
+  tags: waiting
+
+- name: installing FIGLET
+  apt: name=figlet state=present
+  when: ansible_distribution == "Ubuntu"
+  tags: figlet
+
+- name: installing Apache2
+  apt:
+    name: apache2
+    state: present
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+  tags: apache
+
+- debug:
+    msg: ALL REDHAT AND CENTOS MACHINE PATCH AND UPDATED SUCCESSFULLY!!!
+  when: ansible_distribution == "Ubuntu"
+  tags: msg2
