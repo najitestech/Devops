@@ -1,0 +1,11 @@
+---
+- name: installing items on Ubuntu server
+  apt: name={{ item }} state=present
+  with_items:
+    - wget
+    - vim
+    - figlet
+    - python-pip
+    - openvpn
+    - openssh-server
+  when: ansible_distribution == "Ubuntu"

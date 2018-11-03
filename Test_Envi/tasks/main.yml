@@ -1,0 +1,3 @@
+---
+- include_tasks: Centos.yml
+- include_tasks: Ubuntu.yml
