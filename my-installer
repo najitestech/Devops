@@ -1,0 +1,32 @@
+#!/bin/bash
+# Author: Kelvin Ikpeni <kelvinikpeni@gmail.com>
+# Website: http://kelvinikpeni.com
+# Bash Menu Script for Ansible Installer
+clear
+echo ""
+Najitestech="1.0.0"
+NAJITE_TITLE="==== Najite's Installer $Najitestech ===="
+TITLE_BYTES=${#NAJITE_title}
+UNDERLINE_STRING=$(for ((i=1; i<=$TITLE_BYTES; i++));do printf "%s" "=";done;printf "\n")
+
+ANSIBLE_EXECUTABLE=$(which ansible-playbook)
+Test_Wnvi=$(pwd)
+
+# Display Installer Title
+echo $NAJITE_TITLE
+echo $UNDERLINE_STRING
+
+PS3='Select an Option or [q] to Quit: '
+options=("[I]nstall PATCH" "Install PATCH + [C]PATCH")
+select opt in "${options[@]}"
+do
+    if [[ "$REPLY" == "1" || "$REPLY" == "I" || "$REPLY" == "i" ]]; then
+        echo "Installing PATCHIES TO VM"
+        echo ""
+        $ANSIBLE_EXECUTABLE -i /home/najite/inventory $my_installer_PATH/home/najite/main.yml --check
+        break
+    elif [[ "$REPLY" == "2" || "$REPLY" == "C" || "$REPLY" == "c" ]]; then
+        echo "Installing PATCH + PATCH"
+        $ANSIBLE_EXECUTABLE -i $my_installer_PATH/inventory $my_installer_PATH/main.yml --extra-vars "enable_coovachilli_support=yes coovachilli_lan_if=$CC_LAN_IF coovachilli_wan_if=$CC_WAN_IF coovachilli_uam_secret=$CC_UAM_SECRET"
+    fi
+done
