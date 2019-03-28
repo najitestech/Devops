@@ -3,3 +3,6 @@ aws ec2 create-security-group --group-name dev-najite --description "test dev-na
 
   import a disk from s3
 aws ec2 import-image --description "AWSLinux" --disk-container "file://containers.json"
+
+  check status of import
+aws ec2 describe-import-image-tasks --import-task-ids "import-ami-05ff4df61a1c53b76"
