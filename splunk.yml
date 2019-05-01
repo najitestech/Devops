@@ -1,0 +1,38 @@
+---
+- name: installing splunk to server
+  hosts: lb-server
+  become_method: true
+  gather_facts: yes
+  vars:
+    splunk_tgz: /root/public/splunk-7.1.2-a0c72a66db66-Linux-x86_64.tgz
+    splunk_password: 'Passwd@123'
+    remove_tgz: /root/splunk-7.1.2-a0c72a66db66-Linux-x86_64.tgz
+  tasks:
+    
+    - name: Push splunk package to server
+      copy: src={{ splunk_tgz }} dest=/root
+
+    - name: unarchiving splunk tgz file
+      unarchive: src=/root/splunk-7.1.2-a0c72a66db66-Linux-x86_64.tgz dest=/root copy=no
+
+    - name: creating passwd for splunk
+      copy: 
+        dest: "/root/splunk/etc/system/local/user-seed.conf"
+        content: |
+          [user_info]
+          USERNAME = admin
+          PASSWORD = Passwd@123
+
+    - name: opening port 8000
+      firewalld: port=8000/tcp zone=public permanent=true state=enabled immediate=yes
+
+    - name: Start splunk
+      shell: /root/splunk/bin/splunk start --answer-yes --no-prompt --accept-license
+
+    - name: Enable boot-start
+      shell: /root/splunk/bin/splunk enable boot-start -user root
+
+    - name: Removing splunk tgz file
+      file:
+        path: "{{ remove_tgz }}"
+        state: absent
