@@ -6,3 +6,25 @@ aws ec2 import-image --description "AWSLinux" --disk-container "file://container
 
   check status of import
 aws ec2 describe-import-image-tasks --import-task-ids "import-ami-05ff4df61a1c53b76"
+
+     Create S3 bucket
+aws s3 mb s3://musician-app-bucket
+      Delete S3 bucket
+aws s3 rb s3://musician-app-bucket      
+
+     Create EC2 instance
+aws ec2 run-instances --image-id ami-02691ba1e3a6405ca --count 1 --instance-type t2.micro --key-name AWS-Devops-Key-01 --security-group-ids sg-00fd3752d961ccea0 --subnet-id subnet-314d693e
+
+     terminate EC2 instance
+aws ec2 terminate-instances --instance-ids i-0644043a531e246af
+
+    Create EBS volume
+aws ec2 create-volume --volume-type gp2 --size 80 --availability-zone us-east-1a    
+    Delete EBS volume
+ aws ec2 delete-volume --volume-id vol-09aad95ad0f862370   
+    
+    attach volume
+aws ec2 attach-volume --volume-id vol-1234567890abcdef0 --instance-id i-01474ef662b89480 --device /dev/sdf
+    detach volume
+aws ec2 detach-volume --volume-id vol-1234567890abcdef0
+    
