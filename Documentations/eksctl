@@ -1,0 +1,5 @@
+  Creat elks cluster
+eksctl create cluster --name=test-cluster --nodes=2 --region=us-east-1 --ssh-public-key=~/.ssh/id_rsa.pub
+
+  Delete eks cluster
+eksctl delete cluster --region=us-east-1 --name=test-cluster  
