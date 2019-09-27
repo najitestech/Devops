@@ -13,7 +13,7 @@ aws s3 mb s3://musician-app-bucket
 aws s3 rb s3://musician-app-bucket      
 
      Create EC2 instance
-aws ec2 run-instances --image-id ami-02691ba1e3a6405ca --count 1 --instance-type t2.micro --key-name aws-prod-key-01 --security-group-ids sg-0af379b0478d83262 --subnet-id subnet-01ade9504d9a857d7
+aws ec2 run-instances --image-id ami-02691ba1e3a6405ca --count 1 --instance-type t2.micro --key-name aws-prod-key-01 --security-group-ids sg-0af379b0478d83262 --subnet-id subnet-0f51c30c94da06a2f
 
      terminate EC2 instance
 aws ec2 terminate-instances --instance-ids i-0644043a531e246af
