@@ -1,0 +1,11 @@
+docker build -t nginx .
+
+Check IP Address of the container
+  docker run alpine ifconfig
+
+docker run -i -t nginx --name <NAME> /bin/sh
+docker run -i -t --name My-Nginx nginx /bin/sh
+
+docker start <NAME>
+
+docker exec -it <NAME> /bin/sh
