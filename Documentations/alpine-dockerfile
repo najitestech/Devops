@@ -6,6 +6,8 @@ Check IP Address of the container
 docker run -i -t nginx --name <NAME> /bin/sh
 docker run -i -t --name My-Nginx nginx /bin/sh
 docker run --name nginx -d -p 8080:80 -i -t nginx /bin/sh
+docker run --name tomcat -d -p 8080:8080 -i -t tomcat /bin/sh
+
 
 docker start <NAME>
 
