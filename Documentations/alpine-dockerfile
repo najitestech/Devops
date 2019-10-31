@@ -10,3 +10,6 @@ docker run --name nginx -d -p 8080:80 -i -t nginx /bin/sh
 docker start <NAME>
 
 docker exec -it <NAME> /bin/sh
+
+Remove all containers
+docker rm $(docker ps -a -q)
